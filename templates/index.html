@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>SmartEDU Bot</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+  <link rel="stylesheet" href="/Projects/MajorProject/ChatImplementation/getpost/static/styles/style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <!-- partial:index.partial.html -->
+  <section class="msger">
+    <header class="msger-header">
+      <div class="msger-header-title">
+        <i class="fas fa-book"></i>  SmartEDU Bot  
+        <div class="selectbook">
+          Please Select Your Department
+          <select id="book-select">
+            <option value="n">--Please choose an option--</option>
+            <option value="p1">PHY11</option>
+            <option value="b1">BIO11</option>
+            <option value="p2">PHY12</option>
+            <option value="b2">BIO12</option>
+          </select>
+        </div>
+      </div>
+    </header>
+
+    <main class="msger-chat">
+      <div class="msg left-msg">
+        <div class="msg-img" style="background-image: url(https://freesvg.org/img/1538298822.png)"></div>
+
+        <div class="msg-bubble">
+          <div class="msg-info">
+            <div class="msg-info-name">SmartEDU Bot</div>
+            <div class="msg-info-time"><span id="date-time"></span></div>
+          </div>
+
+          <div class="msg-text">
+            Hi, welcome to ChatBot! Go ahead and send me a message. 😄
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    <form class="msger-inputarea">
+      <input type="text" class="msger-input" id="textInput" placeholder="Enter your message...">
+      <button type="submit" class="msger-send-btn">Send</button>
+    </form>
+  </section>
+  <!-- partial -->
+  <script src='https://use.fontawesome.com/releases/v5.0.13/js/all.js'></script>
+  <script>
+
+    const msgerForm = get(".msger-inputarea");
+    const msgerInput = get(".msger-input");
+    const msgerChat = get(".msger-chat");
+
+
+    // Icons made by Freepik from www.flaticon.com
+    const BOT_IMG = "https://freesvg.org/img/1538298822.png";
+    const PERSON_IMG = "https://www.pngitem.com/pimgs/m/524-5244625_font-awesome-user-svg-hd-png-download.png";
+    const BOT_NAME = "    SmartEDU Bot";
+    const PERSON_NAME = "You";
+
+    msgerForm.addEventListener("submit", event => {
+      event.preventDefault();
+
+      const msgText = msgerInput.value;
+      if (!msgText) return;
+
+      var book=document.getElementById("book-select");
+
+      var selectedbook=book.value;
+
+      appendMessage(PERSON_NAME, PERSON_IMG, "right", msgText);
+      msgerInput.value = "";
+      botResponse(msgText,selectedbook);
+    });
+
+    function appendMessage(name, img, side, text) {
+      //   Simple solution for small apps
+      const msgHTML = `
+                        <div class="msg ${side}-msg">
+                          <div class="msg-img" style="background-image: url(${img})"></div>
+
+                          <div class="msg-bubble">
+                            <div class="msg-info">
+                              <div class="msg-info-name">${name}</div>
+                              <div class="msg-info-time">${formatDate(new Date())}</div>
+                            </div>
+
+                            <div class="msg-text">${text}</div>
+                          </div>
+                        </div>
+                        `;
+      msgerChat.insertAdjacentHTML("beforeend", msgHTML);
+      msgerChat.scrollTop += 500;
+    }
+
+    function appendMessagetest(name, img, side, text) {
+      //   Simple solution for small apps
+      const msgHTML = `
+                        <div class="msg ${side}-msg">
+                          <div class="msg-img" style="background-image: url(${img})"></div>
+
+                          <div class="msg-bubble">
+                            <div class="msg-info">
+                              <div class="msg-info-name">${name}</div>
+                              <div class="msg-info-time">${formatDate(new Date())}</div>
+                            </div>
+
+                            <div class="msg-text">${text}</div>
+                            <div class='msg-text'>Is the Answer upto your expectations?  <a href='#' onclick="func_yes()">Yes</a>  <a href='#' onclick="func_no()">No</a></div>
+                          </div>
+                        </div>
+                        `;
+      msgerChat.insertAdjacentHTML("beforeend", msgHTML);
+      msgerChat.scrollTop += 500;
+    }
+
+    function botResponse(rawText,selectedbook) {
+
+      // Bot Response
+      $.get("/get", { msg: rawText+","+selectedbook }).done(function (data) {
+        console.log(rawText);
+        console.log(data);
+        console.log(selectedbook)
+        const msgText = data;
+        appendMessagetest(BOT_NAME, BOT_IMG, "left", msgText);
+
+      });
+
+    }
+
+
+    // Utils
+    function get(selector, root = document) {
+      return root.querySelector(selector);
+    }
+
+    function formatDate(date) {
+      const h = "0" + date.getHours();
+      const m = "0" + date.getMinutes();
+
+      return `${h.slice(-2)}:${m.slice(-2)}`;
+    }
+
+    var dt=new Date();
+    document.getElementById('date-time').innerHTML=formatDate(dt);
+
+    function func_yes(){
+      var book=document.getElementById("book-select");
+
+      var selectedbook=book.value;
+
+      botResponse("YES",selectedbook)
+    }
+
+    function func_no(){
+      var book=document.getElementById("book-select");
+
+      var selectedbook=book.value;
+      
+      botResponse("NO",selectedbook)
+    }
+
+  </script>
+
+</body>
+
+</html>

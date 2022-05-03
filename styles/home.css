@@ -1,0 +1,202 @@
+
+  body {
+    
+    background:#ffffff ;
+   
+  margin: 0%;
+  }
+.home
+{
+  background-color: rgb(255, 255, 255);
+  height:100vh;
+  width: 100%;
+}
+.about
+{
+  background-color: #2264ab;
+  height:100vh;
+  width: 100%;
+}
+.service
+{
+  background-color: rgb(255, 255, 255);
+  height:130vh;
+  width: 100%;
+}
+.contact
+{
+  background-color: #2264ab;
+  height: 80vh;
+  width: 100%;
+}
+.navbar {
+    position: sticky;
+   ;
+    display: flex;
+    width: 100%;
+    height: 60px;
+    background: rgba(0,0,0,0.7);
+  }
+  
+  .navbar ul {
+    display: flex;
+    list-style: none;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .navbar ul li {
+    margin: 0 3rem;
+   
+  }
+  
+  .navbar ul li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fffdfd;
+  }
+  
+  .navbar ul li a:hover {
+    color: skyblue;
+  }
+  .curveDownColor
+  {
+    position:absolute;
+    bottom: -100px;
+  }
+  .about
+  {
+    position: relative;
+  }
+  .about .curve2
+  {
+    position:absolute;
+    bottom: -150px;
+    
+  }
+  .about
+  {
+    position: relative;
+  }
+
+  .grid {
+    display: grid;
+    grid-gap: 90px;
+    grid-auto-flow: column;
+    grid-template-columns: 20% 20% 20% 20%;
+    margin-top: 5%;
+    padding-left: 2%;
+    padding-right: 2%;
+    
+  }
+  
+  .grid > * {
+    background-color: rgb(255, 255, 255);
+    height: 500px;
+    outline-color: black;
+    outline-style: auto;
+    border-radius: 10px;
+  
+  }
+  #svgi {
+    width: 600px;
+    height: 600px;
+  position: absolute;
+  right: 100px;
+   
+}
+#chattt
+{
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  padding-top: 0%;
+  margin-left: 60px;
+}
+
+.wrap {
+  margin: auto auto;
+  width: 1000px;
+}
+h2 {
+  margin: 0;
+  color: #000000;
+  font-size: 2.5em;
+  font-weight: 300;
+}
+
+
+
+
+.column {
+  
+  float: left;
+  width: 48%;
+  padding: 10px;
+  height: 600px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.about .row .column video
+{
+  margin-top: 15%;
+}
+.action{
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  width: 70px;
+  height: 70px;
+  background: #fff;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 5px 5px rgba(red, green, blue, alpha); 
+}
+
+.action span{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #a12dea;
+  font-size: 2em;
+  transition: 0.3s ease-in-out;
+}
+.grid .google img
+{
+  height: 200px;
+  width: 200px;
+  padding-left: 15%;
+  padding-top: 0%;
+}
+.grid .scrap img
+{
+  height: 100px;
+  width: 100px;
+  margin-top: 50px;
+  padding-left: 30%;
+  padding-top: 0%;
+}
+.grid .yake img
+{
+  height: 100px;
+  width: 100px;
+  margin-top: 50px;
+  padding-left: 30%;
+  padding-top: 0%;
+}
+.grid .pdfscrap img
+{
+  height: 150px;
+  width: 200px;
+  margin-top: 50px;
+  padding-left: 15%;
+  margin-top: 0px;
+}

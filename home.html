@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width-device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>EduBot</title>
+        <link rel="stylesheet" href="styles\home.css">
+    </head>
+    <body>
+        <nav class="navbar">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#service">Service</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="home" id="home">
+            <img id="chattt" alt="" src="Images\logo.png" />
+            <img id="svgi" alt="" src="Images\MergedImages.svg"/>       
+       <svg class="curveDownColor" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="max" height="300" preserveAspectRatio="none" viewBox="0 -75 1440 560"><g mask="url(&quot;#SvgjsMask1021&quot;)" fill="none">
+       <path d="M 0,128 C 144,185.2 432,427.8 720,414 C 1008,400.2 1296,130 1440,59L1440 560L0 560z" fill="#2264ab"> </path>
+       </g><defs><mask id="SvgjsMask1021"><rect width="1440" height="560" fill="#ffffff"></rect></mask></defs></svg>   
+        </div>
+    
+        <div class="about" id="about">
+            <div class="row">
+                <div class="column" style="background-color:#2264ab;text-align: center;">
+                  <h2 style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">About</h2>
+                  <br>
+                  <br>
+                  <br>
+                  <p style="font-size: 30px;width: 80%;padding-left: 50px;">Not every answer is available on the internet, students need to go through books to solve their queries which consume more time than required.Smart EducationalBot is a query solver bot that provides answers to science students of standard 11th & 12th. The bot is programmed to perform pdf scraping to display the suitable output to the user. </p>
+                </div>
+                <div class="column" style="background-color:#2264ab;">
+                  <video width="100%" height="auto" controls>
+                    <source src="Images\demo.mp4" type="video/mp4">
+                    <source src="" type="video/ogg">
+                    <track label="English" kind="captions" srclang="en" src="resources/myvideo-en.vtt" default>
+                    <track label="Deutsch" kind="captions" srclang="de" src="resources/myvideo-de.vtt">
+                    <track label="Español" kind="captions" srclang="es" src="resources/myvideo-es.vtt">
+                  </video>
+                  
+                </div>
+              </div>
+            
+        <svg class="curve2" id="service" style="transform:rotate(180deg)" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="max" height="200" preserveAspectRatio="none" viewBox="0 0 1440 560"><g mask="url(&quot;#SvgjsMask1021&quot;)" fill="none">
+        <path d="M 0,128 C 144,185.2 432,427.8 720,414 C 1008,400.2 1296,130 1440,59L1440 560L0 560z" fill="#2264ab"> </path>
+        </g><defs><mask id="SvgjsMask1021"><rect width="1440" height="560" fill="#ffffff"></rect></mask></defs></svg>     
+        </div>
+        <div class="service" >
+            <h2 style="color: black;margin-top: 100px;text-align: center; font-size: 50px; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">Features</h2>
+            <div class="grid">
+                <div class="google">
+                  <img src="Images\bert.png" alt="">
+                  <p style="width: 200px;padding-left: 50px;font-size: 22px;font-family: Arial, Helvetica, sans-serif;color: rgb(11, 3, 86);">Smart EducationalBot uses bert algorithm to process the context available and filters it out to provide the best possible answer to students.</p>
+                </div>
+                <div class="scrap">
+                  <img src="Images\web.png" alt="">
+                  <h3 style="text-align: center;font-size: 25px;font-family: Arial, Helvetica, sans-serif;color: rgb(11, 3, 86);">Web Scraping</h3>
+                  <p style="width: 200px;padding-left: 50px;font-size: 22px;font-family: Arial, Helvetica, sans-serif;color: rgb(11, 3, 86);">In this method, APIs are used to extract information from intended sites. Web scraping is used in this chatbot as an alternative to pdf scraping.</p>
+                </div>
+                <div class="yake">
+                  <img src="Images\yake.png" alt="">
+                  <h3 style="text-align: center;font-size: 25px;font-family: Arial, Helvetica, sans-serif;color: rgb(11, 3, 86);">Keyword Extraction</h3>
+                  <p style="width: 200px;padding-left: 50px;font-size: 22px;font-family: Arial, Helvetica, sans-serif;color: rgb(11, 3, 86);">Keyword extraction is the first and most important step of this system. Extraction of keywords from the query helps the bot to know about the topic of interest of the user. </p>
+                </div>
+                <div class="pdfscrap">
+                  <img src="Images\pdf.png" alt="">
+                  <h3 style="text-align: center;font-size: 25px;font-family: Arial, Helvetica, sans-serif;color: rgb(11, 3, 86);">PDF Scraping</h3>
+                  <p style="width: 200px;padding-left: 50px;font-size: 22px;font-family: Arial, Helvetica, sans-serif;color: rgb(11, 3, 86);">Pdf scraping is a method of extracting intended info from the pdf. This is achieved using yake, tokenizer, and bert. This feature provies answers to the user from textbook pdfs.</p>
+                </div>
+              </div>
+            <svg class="curve3" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" style="margin-top: 20px;" width="max" height="300" preserveAspectRatio="none" viewBox="0 45 1440 560"><g mask="url(&quot;#SvgjsMask1021&quot;)" fill="none">
+                <path d="M 0,128 C 144,185.2 432,427.8 720,414 C 1008,400.2 1296,130 1440,59L1440 560L0 560z" fill="#2264ab"> </path>
+                </g><defs><mask id="SvgjsMask1021"><rect width="1440" height="560" fill="#ffffff"></rect></mask></defs></svg>    
+        </div>
+        
+        <div class="contact" id="contact">
+            <div class="wrap">
+                <h2 style="text-align: center;">Contact Us</h2>
+                <hr />
+                <div style="text-align: center;font-size: 25px;">
+                  <i class="fa fa-phone" aria-hidden="true"> </i><br>
+                  <p>Phone Number: - 9846752310</p>
+                </div>
+                <div  style="text-align: center;font-size: 25px;">
+                  <i class="fa fa-envelope" aria-hidden="true"></i>
+                  <p>E-mail: - edubot444@gmail.com</p>
+                </div>
+                <div  style="text-align: center;font-size: 25px;">
+                  <i class="fa fa-map-marker" aria-hidden="true"></i>
+                  <p>Wattumul college, CHM campus, Ulhasnagar</p>
+                </div>
+                
+              </div> 
+        </div>
+        <div class="action" onclick="actionToggle();">
+          <!-- <a href="http://127.0.0.1:5000/"></a> -->
+          <span><a href="http://127.0.0.1:5000/"><img src="Images\float.png" alt="" width="25" height="25"></a></span>
+          
+      </div>
+      <script type="text/javascript">
+          function actionToggle(){
+              var action = document.querySelector('.action');
+              action.classList.toggle('active')
+          }
+      </script>
+    </body>
+
+</html>
